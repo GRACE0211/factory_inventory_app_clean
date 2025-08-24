@@ -35,12 +35,15 @@
 + 使用者可於此頁面新增一筆交易資料(入庫或出貨)。資料會即時寫入 MySQL 資料 庫。系統在提交交易前會根據「交易後庫存」自動進行交易合理性檢查,邏輯如下:
 
 - ✅ 若交易後庫存數量≥80:允許交易,庫存顯示正常
+
 ![factory_inventory 正常](screenshot/page_newTransaction_normal.jpg)
 
 - ✅ 若 50 ≤ 交易後庫存 < 80:允許交易,但系統會標記該產品庫存為「低量」並以紅色顯 示。
+
 ![factory_inventory 50<= 庫存 <80](screenshot/page_newTransaction_between50and80.jpg)
 
 - ✅ 若交易後庫存<50:禁止交易,顯示錯誤提示,並要求使用者調整交易數量。
+
 ![factory_inventory 庫存 < 50](screenshot/page_newTransaction_lowerThan50.jpg)
   
  本系統整合視覺化操作介面與資料即時同步機制,不僅讓使用者能夠快速掌握每日商 品進出狀況,也降低手動管理庫存所產生的錯誤風險。透過與 MySQL 資料庫的串 接,確保資料一致性與擴充彈性。此專案展現我在 Windows 桌面應用程式開發、資 料邏輯處理與資料庫整合方面的實作能力,作為實務應用導向系統的基礎範例。
